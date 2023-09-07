@@ -29,6 +29,7 @@ function FilteredEventsPage() {
     numMonth < 1 ||
     numMonth > 12
   ) {
+    
     return (
       <Fragment>
           <ErrorAlert>
