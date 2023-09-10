@@ -5,7 +5,7 @@ function HomePage(props) {
       <li>Product 2</li>
       <li>Product 3</li>
     </ul>
-  )
+  );
 }
 
 export default HomePage;
