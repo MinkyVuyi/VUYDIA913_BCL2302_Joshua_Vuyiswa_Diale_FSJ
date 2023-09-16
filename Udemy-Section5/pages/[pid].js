@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { getStaticProps } from './../../../nextjs-course-code/pages/posts/index';
+import { getStaticProps } from '../../nextjs-course-code/pages/posts/index';
 import fs from 'fs/promises';
 import path from 'path';
 
