@@ -5,9 +5,9 @@ import path from 'path';
 function ProductDetailPage(props) {
    const { loadedProduct } = props;
 
-   if(!loadedProduct) {
-    return <div>Loading...</div>;
-   }
+//    if(!loadedProduct) {
+//     return <div>Loading...</div>;
+//    }
 
     return (
     <Fragment>
@@ -39,7 +39,8 @@ export async function getStaticPaths() {
         paths: [
             {params:{ pid:'p1' }},  // /post/[pid]
         ],
-        fallback: true
+        fallback: 'blocking'
+        //fallback: 'blocking'
     };
 }
 
