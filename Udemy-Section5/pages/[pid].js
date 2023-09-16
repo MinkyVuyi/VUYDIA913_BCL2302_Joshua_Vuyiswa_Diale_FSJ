@@ -1,10 +1,13 @@
 import { Fragment } from "react";
-import { getStaticProps } from '../../nextjs-course-code/pages/posts/index';
 import fs from 'fs/promises';
 import path from 'path';
 
-function ProductDetailPage() {
+function ProductDetailPage(props) {
    const { loadedProduct } = props;
+
+   if(!loadedProduct) {
+    return <div>Loading...</div>;
+   }
 
     return (
     <Fragment>
@@ -16,7 +19,6 @@ function ProductDetailPage() {
 
 export async function getStaticProps(context) {
     const { params } = context;
-
     const productId = params.pid;
 
     const filePath = path.join(process.cwd(), 'data', 'dummy-backend.json');
@@ -29,7 +31,16 @@ export async function getStaticProps(context) {
         props: {
             loadedProduct: product
         }
-    }
+    };
+}
+
+export async function getStaticPaths() {
+    return {
+        paths: [
+            {params:{ pid:'p1' }},  // /post/[pid]
+        ],
+        fallback: true
+    };
 }
 
 export default ProductDetailPage;

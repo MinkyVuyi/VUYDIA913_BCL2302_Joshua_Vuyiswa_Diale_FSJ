@@ -38,7 +38,6 @@ export async function getStaticProps() {
     products: data.products
   },
   revalidate: 10,
-  notFound
 };
 }
 
