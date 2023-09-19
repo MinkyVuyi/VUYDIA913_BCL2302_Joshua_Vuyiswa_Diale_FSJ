@@ -3,7 +3,7 @@ import { useSWR } from 'swr';
 import { getStaticProps } from './../../nextjs-course-code/pages/index';
 
 function LastSalesPage(props) {
-    const [sales, setSales] = useState();
+    const [sales, setSales] = useState(props.sales);
     // const [loading, setLoading] = useState(false);
 
     const { data, error } = useSWR('https://nextjs-course-fb252-default-rtdb.firebaseio.com/sales.json');
@@ -43,7 +43,7 @@ function LastSalesPage(props) {
         return <p>Failed to load.</p>;
     }
 
-    if (!data || !sales) {
+    if (!data && !sales) {
         return <p>Loading...</p>
     }
 
