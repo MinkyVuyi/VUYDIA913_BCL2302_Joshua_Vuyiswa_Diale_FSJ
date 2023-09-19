@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useSWR } from 'swr';
 
 function LastSalesPage() {
     const [sales, setSales] = useState();
     const [loading, setLoading] = useState(false);
+
+    useSWR('https://nextjs-course-fb252-default-rtdb.firebaseio.com/sales.json');
 
     useEffect(() => {
         setIsLoading(true);
