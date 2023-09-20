@@ -42,8 +42,9 @@ export async function getStaticProps(context) {
   return {
     props: {
       selectedEvent: event
-    }
-  }
+    },
+    revalidate: 30 //half a minute
+  };
 }
 
 export async function getStaticPaths() {
