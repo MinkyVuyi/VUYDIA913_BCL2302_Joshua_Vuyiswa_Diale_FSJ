@@ -37,6 +37,12 @@ function HomePage() {
         </div>
         <button>Send Feedback</button>
       </form>
+      <hr />
+      <ul>
+        {feedbackItems.map((item) => (
+          <li key={item.id}>{item.id}</li>
+        ))}
+      </ul>
     </div>
   );
 }
