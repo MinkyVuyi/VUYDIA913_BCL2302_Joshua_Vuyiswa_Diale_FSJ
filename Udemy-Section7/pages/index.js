@@ -8,14 +8,14 @@ function HomePage(props) {
     <div>
       <Head>
         <title>NextJS Events</title>
-        <meta
-        name="description"
-        content="Find a lot of great events that allow you to evolve..."
+        <meta 
+          name='description'
+          content='Find a lot of great events that allow you to evolve...'
         />
       </Head>
       <EventList items={props.events} />
     </div>
-  );
+  );                                                                                                                                                                                                                                     
 }
 
 export async function getStaticProps() {
@@ -25,7 +25,7 @@ export async function getStaticProps() {
     props: {
       events: featuredEvents
     },
-    revalidate: 1800
+    revalidate: 1800                                                                                                           
   }
 }
 
