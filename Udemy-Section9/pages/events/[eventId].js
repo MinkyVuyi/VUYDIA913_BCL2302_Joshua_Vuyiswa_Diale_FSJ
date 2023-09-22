@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-
 import { getEventById, getFeaturedEvents } from '../../helpers/api-util';
 import EventSummary from '../../components/event-detail/event-summary';
 import EventLogistics from '../../components/event-detail/event-logistics';
@@ -10,7 +9,6 @@ import Comments from '../../components/input/comments';
 
 function EventDetailPage(props) {
   const event = props.selectedEvent;
-
   if (!event) {
     return (
       <div className="center">
@@ -18,7 +16,6 @@ function EventDetailPage(props) {
       </div>
     );
   }
-
   return (
     <Fragment>
       <Head>
@@ -42,12 +39,9 @@ function EventDetailPage(props) {
     </Fragment>
   );
 }
-
 export async function getStaticProps(context) {
   const eventId = context.params.eventId;
-
   const event = await getEventById(eventId);
-
   return {
     props: {
       selectedEvent: event
@@ -55,16 +49,12 @@ export async function getStaticProps(context) {
     revalidate: 30
   };
 }
-
 export async function getStaticPaths() {
   const events = await getFeaturedEvents();
-
   const paths = events.map(event => ({ params: { eventId: event.id } }));
-
   return {
     paths: paths,
     fallback: 'blocking'
   };
 }
-
 export default EventDetailPage;

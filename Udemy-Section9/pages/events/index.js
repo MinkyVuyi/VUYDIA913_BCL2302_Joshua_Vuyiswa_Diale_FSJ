@@ -8,25 +8,19 @@ import EventsSearch from '../../components/events/events-search';
 
 function AllEventsPage(props) {
   const router = useRouter();
-  const { events } = props;
+  const {events} = props;
 
   function findEventsHandler(year, month) {
     const fullPath = `/events/${year}/${month}`;
-
+    
     router.push(fullPath);
   }
 
   return (
     <Fragment>
       <Head>
-        <title>All my events</title>
-      </Head>
-      <Head>
-        <title>All Events</title>
-        <meta
-          name='description'
-          content='Find a lot of great events that allow you to evolve...'
-        />
+        <title>All events</title>
+        <meta name="description" content="Search for new places....." />
       </Head>
       <EventsSearch onSearch={findEventsHandler} />
       <EventList items={events} />
@@ -35,14 +29,14 @@ function AllEventsPage(props) {
 }
 
 export async function getStaticProps() {
-  const events = await getAllEvents();
+  const events  = await getAllEvents(); 
 
   return {
     props: {
       events: events,
     },
     revalidate: 60
-  };
+  }
 }
 
 export default AllEventsPage;
