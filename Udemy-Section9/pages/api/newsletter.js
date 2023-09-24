@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb'
+//import { MongoClient } from 'mongodb'
 
 async function handler(req, res) {
     if (req.method === 'POST') {
@@ -9,14 +9,15 @@ async function handler(req, res) {
             return;
         }
 
-        const client = await MongoClient.connect(
-            'mongodb+srv://vuyi:j4rFaqCTzTB7oA78@cluster0.tpfksdf.mongodb.net/events?retryWrites=true&w=majority'
-        );
-          const db = client.db();
+        console.log(userEmail);
+        // const client = await MongoClient.connect(
+        //     'mongodb+srv://vuyi:j4rFaqCTzTB7oA78@cluster0.tpfksdf.mongodb.net/events?retryWrites=true&w=majority'
+        // );
+        //   const db = client.db();
 
-         await db.collection('emails').insertOne({ email: userEmail });
+        //  await db.collection('emails').insertOne({ email: userEmail });
        
-         client.close();
+        //  client.close();
 
         res.status(201).json({ message: 'Signed up!' });
     }

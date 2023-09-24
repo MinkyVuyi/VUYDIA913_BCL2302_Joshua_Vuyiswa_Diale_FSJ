@@ -7,8 +7,9 @@ async function handler(req, res) {
 
     if (req.method === 'POST') {
         const { email, name, text } = req.body;
-
+        // adding server-side validation
         if (
+            !email.includes('@') ||
             !name ||
             name.trim() === '' ||
             !text ||
