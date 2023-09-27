@@ -1,4 +1,4 @@
-import { getPostsFiles } from "../../lib/posts-util";
+import { getPostsFiles } from "../lib/posts-util";
 import PostContent from "../../components/posts/post-detail/post-content";
 
 
