@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getAllPosts } from '../../../lib/posts-util';
+import { getAllPosts } from '../../lib/posts-util';
 import AllPosts from '../../components/posts/all-posts';
 
 function AllPostsPage(props) {

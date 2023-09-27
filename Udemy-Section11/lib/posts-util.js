@@ -1,8 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-
 import matter from 'gray-matter';
-import { getPostsFiles } from '../lib/posts-util';
+
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -26,7 +25,6 @@ export function getPostData(postIdentifier) {
 
 export function getAllPosts() {
     const postFiles = getPostsFiles();
-    
     const allPosts = postFiles.map(postFile => {
         return getPostData(postFile);
     });
@@ -43,5 +41,3 @@ export function getAllPosts() {
 
         return featuredPosts;
     }
-
-export default getAllPosts;
