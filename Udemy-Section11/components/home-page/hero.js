@@ -8,8 +8,9 @@ function Hero() {
             <div className={classes.image}> 
             <Image 
             src="/images/site/vuyiswa.png" alt="An image showing Vuyiswa" 
-            width={300} 
-            height={300} />  
+            width={100} 
+            height={100}
+            layout="responsive" />  
             </div>
             <h1>Hi, I'm Vuyiswa</h1>
             <p>
