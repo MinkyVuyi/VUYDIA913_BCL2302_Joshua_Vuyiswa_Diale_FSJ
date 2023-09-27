@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Logo from '../layout/logo';
 
 import classes from './main-navigation.module.css';
 
