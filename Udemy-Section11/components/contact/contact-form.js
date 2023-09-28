@@ -126,11 +126,11 @@ function ContactForm() {
                     <button>Send Message</button>
                 </div>
             </form>
-            {notification && <Notification 
+            {notification && (<Notification 
             status={notification.status} 
             title={notification.title} 
             message={notification.message} 
-            />}
+            />)}
         </section>
     );
 }
