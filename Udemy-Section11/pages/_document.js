@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { NextScript } from 'next/document';
 
 class MyDocument extends Document {
     render() {
@@ -9,9 +8,7 @@ class MyDocument extends Document {
             <body>
                 <Main />
                 <NextScript />
-                <div id='notifications'>
-                    
-                </div>
+                <div id='notifications'></div>
             </body>
         </Html>
         );
