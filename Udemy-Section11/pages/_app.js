@@ -4,7 +4,7 @@ import '../styles/globals.css';
 import Layout from '../components/layout/layout';
 
 function MyApp({ Component, pageProps }) {
-  return ( 
+  return (
     <Layout>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -14,4 +14,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp
+export default MyApp;

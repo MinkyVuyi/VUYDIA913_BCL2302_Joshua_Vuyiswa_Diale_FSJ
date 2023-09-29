@@ -10,9 +10,9 @@ function HomePage(props) {
     <Fragment>
       <Head>
         <title>Vuyi's Blog</title>
-        <meta 
-        name="description" 
-        content="I post about programming and web development." 
+        <meta
+          name='description'
+          content='I post about programming and web development.'
         />
       </Head>
       <Hero />
@@ -26,13 +26,9 @@ export function getStaticProps() {
 
   return {
     props: {
-      posts: featuredPosts
-    }
+      posts: featuredPosts,
+    },
   };
 }
 
 export default HomePage;
-
-
-// 1) Hero Section - where we present ourselves
-// 2) Featured Posts

@@ -1,18 +1,18 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
-    render() {
-        return (
-        <Html lang='en'>
-         <Head />
+  render() {
+    return (
+      <Html lang='en'>
+        <Head />
         <body>
-            <Main />
-            <NextScript />
-            <div id='notifications'></div>
+          <Main />
+          <NextScript />
+          <div id="notifications"></div>
         </body>
-        </Html>
-        );
-    }
+      </Html>
+    );
+  }
 }
 
 export default MyDocument;
