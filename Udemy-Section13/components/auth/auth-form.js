@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+
 import classes from './auth-form.module.css';
 
 async function createUser(email, password) {
@@ -6,8 +7,8 @@ async function createUser(email, password) {
     method: 'POST',
     body: JSON.stringify({ email, password }),
     headers: {
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    },
   });
 
   const data = await response.json();
@@ -38,13 +39,7 @@ function AuthForm() {
     // optional: Add validation
 
     if (isLogin) {
-      const result = await signIn('credentials', {
-        redirect: false,
-        email: enteredEmail,
-        password: enteredPassword,
-      });
-
-      console.log(result);
+      // log user in
     } else {
       try {
         const result = await createUser(enteredEmail, enteredPassword);
@@ -65,7 +60,12 @@ function AuthForm() {
         </div>
         <div className={classes.control}>
           <label htmlFor='password'>Your Password</label>
-          <input type='password' id='password' required ref={passwordInputRef} />
+          <input
+            type='password'
+            id='password'
+            required
+            ref={passwordInputRef}
+          />
         </div>
         <div className={classes.actions}>
           <button>{isLogin ? 'Login' : 'Create Account'}</button>
@@ -81,5 +81,4 @@ function AuthForm() {
     </section>
   );
 }
-
 export default AuthForm;
